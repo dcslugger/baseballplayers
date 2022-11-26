@@ -18,12 +18,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Current Rappers</h1>
-    <ul class="rappers">
+    <h1>Current Players</h1>
+    <ul class="players">
     <% for(let i=0; i < info.length; i++) {%>
-        <li class="rapper">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
+        <li class="player">
+            <span><%= info[i].firstName %></span>
+            <span><%= info[i].lastName %></span>
+           <span> - </span>
+            <span><%= info[i].position %></span>
+            <span> - </span>
             <span><%= info[i].likes %></span>
             <span class='fa fa-thumbs-up'></span>
             <span class='fa fa-trash'></span>
@@ -31,11 +34,25 @@
     <% } %>
     </ul>
 
-    <h2>Add A Rapper:</h2>
+    <h2>Add A Player:</h2>
 
-    <form action="/addRapper" method="POST">
-        <input type="text" placeholder="Stage Name" name="stageName">
-        <input type="text" placeholder="Birth Name" name="birthName">
+    <form action="/addPlayer" method="POST">
+        <input type="text" placeholder="First Name" name="firstName">
+        <input type="text" placeholder="Last Name" name="lastName">
+        
+        <select name="position">
+            <option value="Pitcher">Pitcher</option>
+            <option value="Catcher">Catcher</option>
+            <option value="1st Baseman">1st Baseman</option>
+            <option value="2nd Baseman">2nd Baseman</option>
+            <option value="3rd Baseman">3rd Baseman</option>
+            <option value="Shortstop">Shortstop</option>
+            <option value="Left Field">Left Field</option>
+            <option value="Center Field">Center Field</option>
+            <option value="Right Field">Right Field</option>
+            <option value="Utility">Utility</option>
+            <option value="Designated Hitter">Designated Hitter</option>
+                     </select>
         <input type="submit">
     </form>
     
